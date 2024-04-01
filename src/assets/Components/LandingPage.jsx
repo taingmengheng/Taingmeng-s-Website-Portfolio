@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 import HomePage from './HomePage'
 import Resume from './Resume'
 import Contact from './Contact'
+import Projects from './Projects'
 
 const LandingPage = () => {
 
@@ -20,21 +21,24 @@ const LandingPage = () => {
   const [currentSection, setCurrentSection] = useState('home');
 
     // Function to handle scroll event
-    const handleScroll = () => {
-      const homeSection = document.getElementById('home');
-      const resumeSection = document.getElementById('resume');
-      const contactSection = document.getElementById('contact');
-  
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-  
-      if (scrollPosition < resumeSection.offsetTop) {
-        setCurrentSection('home');
-      } else if (scrollPosition >= resumeSection.offsetTop && scrollPosition < contactSection.offsetTop) {
-        setCurrentSection('resume');
-      } else if (scrollPosition >= contactSection.offsetTop) {
-        setCurrentSection('contact');
-      }
-    };
+  const handleScroll = () => {
+    const homeSection = document.getElementById('home');
+    const resumeSection = document.getElementById('resume');
+    const projectsSection = document.getElementById('projects');
+    const contactSection = document.getElementById('contact');
+
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+    if (scrollPosition < resumeSection.offsetTop) {
+      setCurrentSection('home');
+    } else if (scrollPosition >= resumeSection.offsetTop && scrollPosition < projectsSection.offsetTop) {
+      setCurrentSection('resume');
+    } else if (scrollPosition >= projectsSection.offsetTop && scrollPosition < contactSection.offsetTop) {
+      setCurrentSection('projects');
+    } else if (scrollPosition >= contactSection.offsetTop) {
+      setCurrentSection('contact');
+    }
+  };
   
     useEffect(() => {
       window.addEventListener('scroll', handleScroll);
@@ -53,6 +57,9 @@ const LandingPage = () => {
       <div className='px-4'>
         <div id='home'>
           <HomePage />
+        </div>
+        <div id='projects'>
+          <Projects />
         </div>
         <div id='resume'>
           <Resume />
