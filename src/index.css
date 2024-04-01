@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --default-text-color: #121420; /* Default text color */
+  --inputColor: #f0eefc;
+  --purple: #491577;
+  --yellow: #FCA311;
+}
+
+body {
+  color: var(--default-text-color); 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  font-family: Inter;
+}
+
+div.css-18lndkd-MuiInputBase-root-MuiOutlinedInput-root {
+  background-color: var(--inputColor);
+}
+
+div.css-1a7f723-MuiInputBase-root-MuiFilledInput-root.Mui-focused {
+  background-color: var(--inputColor) !important;
+}
+
+.myCustomInput {
+  border: none;
+  width: 100%;
+  font-size: 15px;
+  /* background-color: var(--inputColor); */
+  font-family: Poppins;
+}
+
+.myCustomInput:focus {
+  /* background-color: blue; */
+  outline: none;
+}
+
+.lower-underline {
+  text-decoration-color: transparent;
+  background-image: linear-gradient(to top, transparent 50%,   50%);
+  background-position: 0 100%; /* Adjust the percentage to lower or raise the underline */
+  background-size: 100% 4px; /* Adjust the thickness of the underline */
+  background-repeat: repeat-x;
+}
