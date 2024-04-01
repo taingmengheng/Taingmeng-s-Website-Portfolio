@@ -37,8 +37,8 @@ const Navbar = ({ scrollToSection, currentSection }) => {
         <p className="font-semibold text-xl">Taingmeng.dev</p>
         <div className="flex gap-7 align-middle">
           <StyledHeaderButton title="home" onClick={() => scrollToSection('home')}/>
+          <StyledHeaderButton title="projects" onClick={() => scrollToSection('projects')}/>
           <StyledHeaderButton title="resume" onClick={() => scrollToSection('resume')}/>
-          <StyledHeaderButton title="projects" />
           <StyledHeaderButton title="contact" onClick={() => scrollToSection('contact')}/>
         </div>
       </div>
